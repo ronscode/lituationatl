@@ -1,0 +1,17 @@
+/*** CSS FILE FOR LITUATION  ***/
+
+body{
+    background-image: url("/images/flames.png");
+
+}
+
+#main{
+    height: 100vh;
+    background: rgba(206, 3, 3, 0.84);
+    overflow: hidden;
+    
+    
+}
+nav{
+    overflow: hidden;
+}
