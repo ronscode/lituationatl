@@ -15,3 +15,16 @@ body{
 nav{
     overflow: hidden;
 }
+
+.h1_home {
+    font-family: 'Bungee Inline', cursive; 
+    color: wheat;
+}
+.h1_home2 {
+    font-family: 'Megrim', cursive; 
+    color: wheat;
+}
+.strongYellow {
+    font-family: 'Bungee Inline', cursive; 
+    color: yellow;
+}
