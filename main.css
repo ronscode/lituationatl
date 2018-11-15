@@ -1,0 +1,30 @@
+/*** CSS FILE FOR LITUATION  ***/
+
+body{
+    background-image: url("/images/atlanta-map.png");
+
+}
+
+#main{
+    height: 100vh;
+    background: rgba(206, 3, 3, 0.84);
+    overflow: hidden;
+    
+    
+}
+nav{
+    overflow: hidden;
+}
+
+.h1_home {
+    font-family: 'Bungee Inline', cursive; 
+    color: wheat;
+}
+.h1_home2 {
+    font-family: 'Megrim', cursive; 
+    color: wheat;
+}
+.strongYellow {
+    font-family: 'Bungee Inline', cursive; 
+    color: yellow;
+}
