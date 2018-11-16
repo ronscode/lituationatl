@@ -28,3 +28,24 @@ nav{
     font-family: 'Bungee Inline', cursive; 
     color: yellow;
 }
+
+/* This is the animation for the about page CSS */
+
+@keyframes aboutSlideIn {
+    from {
+      margin-left: 100%;
+      width: 200%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+.aboutSlide {
+  animation-duration: .7s;
+  animation-name: aboutSlideIn;
+  animation-iteration-count: 1;
+}
