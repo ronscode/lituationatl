@@ -1,14 +1,14 @@
 /*** CSS FILE FOR LITUATION  ***/
 
-body{
+.home_body{
     background-image: url("/images/atlanta-map.png");
 
 }
 
 #main{
-    height: 100vh;
+    /* height: 100vh; */
     background: rgba(206, 3, 3, 0.84);
-    overflow: hidden;
+    /* overflow: hidden; */
     
     
 }
