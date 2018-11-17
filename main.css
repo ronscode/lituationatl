@@ -29,6 +29,18 @@ nav{
     color: yellow;
 }
 
+.h2_about {
+    font-family: 'Bungee Inline', cursive; 
+    font-size: 1.9rem;
+}
+.strongOrange {
+    font-family: 'Bungee Inline', cursive; 
+    color: #FF6633;
+}
+
+
+
+
 /* This is the animation for the about page CSS */
 
 @keyframes aboutSlideIn {
@@ -48,4 +60,8 @@ nav{
   animation-duration: .7s;
   animation-name: aboutSlideIn;
   animation-iteration-count: 1;
+}
+.navStyle {
+    font-size: 25px; 
+    font-family: 'Bungee Inline';
 }
