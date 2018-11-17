@@ -58,7 +58,7 @@ function callback(results, status) {
     }
   }
 
-  //creating markers for render based of types  ex--> type: ['bar']
+ // creating markers for render based of types  ex--> type: ['bar']
 function createMarker(place){
     var placeLoc = place.geometry.location;
     marker = new google.maps.Marker({
