@@ -84,3 +84,22 @@ padding: 0;
 .map_page_body{
     background-color: white; 
 }
+
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 5;
+    /* background-color: #aadaff; */
+    /* padding: 5px; */
+    /* border: 5px solid #999; */
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    /* padding-left: 10px; */
+    /* border-radius: 12px; */
+    margin-top: 70px;
+  }
+
+  
