@@ -72,7 +72,7 @@ function callback(results, status) {
 }
 
 
- // creating markers for render based of types  ex--> type: ['bar']
+//  creating markers for render based of types  ex--> type: ['bar']
 function createMarker(place){
 
     //location for marker
@@ -84,9 +84,20 @@ function createMarker(place){
         
     });
 
+    //This is the string that includes the name and the uber icon link.
+    var contentString = `
+        <div class="d-flex">
+            <p>${place.name}</p>
+        </div>
+        <div>
+        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px" display="inline"/></a>
+        </div>
+    `
+
+    //When you click on the marker, the uber icon appears in the info window. 
     //Name of location will hover over pin when clicked
     google.maps.event.addListener(marker, 'click', function(){
-        infowindow.setContent(place.name);
+        infowindow.setContent(contentString);
         infowindow.open(map, this);
     });
 
@@ -97,6 +108,7 @@ function createMarker(place){
 }
 
 // --------------------------------------------------------------
+
 
 
 function placeMarkerAndPanTo(latLng, map) {
