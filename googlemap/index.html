@@ -48,22 +48,44 @@
                 </div>
         </nav>
 
-        <div class = "d-flex flex-column align-item-center"id="floating-panel">
-            <input onclick="hideMarkers();" type=button value="Hide">
-            <input onclick="showMarkers();" type=button value="LIT SPY">
-            
-        </div>
+        
+            <div class = "d-flex align-item-center"id="floating-panel">
+                <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
+                <input onclick="hideMarkers();" type=button value="Hide">
+                <!-- <input id ="deleteMarkers" onclick="hideUserMakers();" type=button value="Test"> -->
+                <input onclick="showMarkers();" type=button value="LIT SPY"> 
+                
+
+            </div>
+        
         <div id="map"></div>
         <div id="demo"></div>
         
         
 
 
-        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&callback=initMap" async defer></script> -->
-        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places"></script> -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&callback=init" async defer></script> -->
+        <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places&callback=autocomplete"></script> -->
         <script src="main.js"></script>
+        <script src="pin.js"></script>
+        <!-- <script src ="searchbar.js"></script> -->
     
 </body>
 </html>
 
 <!-- AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM -->
+
+
+<!-- amusement_park
+bar
+bowling_alley
+cafe
+casino
+liquor_store
+meal_delivery
+movie_rental
+movie_theater
+night_club
+parking
+restaurant
+shopping_mall -->
