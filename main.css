@@ -30,9 +30,44 @@ nav{
 }
 
 
+.h2_about {
+    font-family: 'Bungee Inline', cursive; 
+    font-size: 1.9rem;
+}
+.strongOrange {
+    font-family: 'Bungee Inline', cursive; 
+    color: #FF6633;
+}
+
+
+
+
+/* This is the animation for the about page CSS */
+
+@keyframes aboutSlideIn {
+    from {
+      margin-left: 100%;
+      width: 200%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+.aboutSlide {
+  animation-duration: .7s;
+  animation-name: aboutSlideIn;
+  animation-iteration-count: 1;
+}
+.navStyle {
+    font-size: 25px; 
+    font-family: 'Bungee Inline';
+}
+
 /* google map css below */
-
-
 
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
@@ -49,4 +84,3 @@ padding: 0;
 .map_page_body{
     background-color: white; 
 }
-
