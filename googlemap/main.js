@@ -15,6 +15,7 @@ var places = [];
 var pinDrop = [];
 var userDrop =[];
 
+
 var youAreHere ={
     lat,
     lng
@@ -153,8 +154,6 @@ function init() {
 
 
   // Search box;
-
-    //-------------------------------------------------
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
