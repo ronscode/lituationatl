@@ -51,10 +51,7 @@ function placeMarkerAndPanTo(latLng, map) {
       var content =`<div class="d-flex">
       <p>Comment:</p>
       </div>
-      Vote for this location:
-      <div class = "d-flex">
-        <button onclick = ""class = "bg-light" id = "like">like: </button>
-        <button class = "bg-light">nah fam:</button>
+      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; leave a note:</span>
       </div>`
       return content;
   }
