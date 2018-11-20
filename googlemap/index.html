@@ -10,9 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Kumar+One+Outline|Megrim|Ranga" rel="stylesheet">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
-
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
 </head>
 <body class ="map_page_body">
 
@@ -47,6 +45,42 @@
                     </div>  
                 </div>
         </nav>
+        
+        <div class="floating-panel" id="comment-box">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="spacer"></div>
+            
+                            <h1>Comments</h1>
+            
+                            <div class="spacer"></div> 
+            
+                        <div class="comment-section text-center">
+            
+                            <div class="spacer"></div>   
+            
+                            <label for="fname"><strong>First Name</strong></label>
+                            <input type="text" id="fname" required="true"><br>
+            
+                            <label for="lname"><strong>Last Name</strong></label>
+                            <input type="text" id="lname" required="true"><br>
+            
+                            <label for="commentBox"><strong>Comment</strong></label>
+                            <input id="commentBox" type="text" required="true">
+            
+                            <br>
+            
+                            <button onclick="writeUserData()" class="btn btn-primary">Submit</button>
+            
+                        </div>
+                        
+                        <div class="spacer"></div>
+            
+                        <div id="thread">
+                        </div>
+                    </div>
+                </div>
+        </div>
 
         <div id="map"></div>
         <div id="demo"></div>
@@ -55,7 +89,22 @@
 
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&callback=initMap" async defer></script> -->
         <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script>
+            var config = {
+            apiKey: "AIzaSyBS40ndyKqGN9X_7poexr8sEGNqH3BZOLo",
+            authDomain: "lituation-front-end-project.firebaseapp.com",
+            databaseURL: "https://lituation-front-end-project.firebaseio.com",
+            projectId: "lituation-front-end-project",
+            storageBucket: "lituation-front-end-project.appspot.com",
+            messagingSenderId: "504597097079"
+          };
+          firebase.initializeApp(config);
+          </script>
         <script src="main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
 </body>
 </html>
