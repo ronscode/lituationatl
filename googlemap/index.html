@@ -56,7 +56,7 @@
 
             </div>
         
-        <div id="map"></div>
+        <div id="map">
         <div id="demo"></div>
 
         
@@ -65,6 +65,19 @@
 
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&callback=init" async defer></script> -->
         <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places&callback=autocomplete"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBS40ndyKqGN9X_7poexr8sEGNqH3BZOLo",
+        authDomain: "lituation-front-end-project.firebaseapp.com",
+        databaseURL: "https://lituation-front-end-project.firebaseio.com",
+        projectId: "lituation-front-end-project",
+        storageBucket: "lituation-front-end-project.appspot.com",
+        messagingSenderId: "504597097079"
+      };
+      firebase.initializeApp(config);
+    </script>
         <script src="main.js"></script>
         <script src="pin.js"></script>
         <script src="comments.js"></script>

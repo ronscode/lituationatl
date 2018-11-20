@@ -24,6 +24,19 @@ var youAreHere ={
     lng
 };
 
+// Reference to the clicks in Firebase.
+var clicks = database.ref('clicks/');
+
+/**
+      * Data object to be written to Firebase.
+      */
+var data = {
+    sender: null,
+    timestamp: null,
+    lat: null,
+    lng: null
+  };
+
 
 var x = document.getElementById("demo");
 //------------------------------------------
@@ -142,6 +155,14 @@ function init() {
     placeMarkerAndPanTo(e.latLng, map);
   });
 
+  // Listen for clicks and add the location of the click to firebase.
+    map.addListener('click', function(e) {
+    data.lat = e.latLng.lat();
+    data.lng = e.latLng.lng();
+    console.log(data);
+  });
+
+
   var request = {
     location: mapCenter,
     radius: '4828.03',
@@ -248,7 +269,8 @@ function createMarker(place){
             <p>${place.name}</p>
         </div>
         <div>
-        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px" display="inline"/></a>
+        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
+        <a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
         </div>
     `
 
@@ -281,8 +303,4 @@ function hideMarkers() {
 }
 
 google.maps.event.addDomListener(window, 'load', init);
-
-
-
-
 
