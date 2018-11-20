@@ -51,16 +51,11 @@ function placeMarkerAndPanTo(latLng, map) {
       var content =`<div class="d-flex">
       <p>Comment:</p>
       </div>
-      Vote for this location:
-      <div class = "d-flex">
-        <button onclick = ""class = "bg-light" id = "like">like: </button>
-        <button class = "bg-light">nah fam:</button>
-      </div>
-      <br />
-      <div>
-      <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
-      <a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
-      </div>`
+      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; leave a note:</span>
+<div>
+<a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
+<a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
+</div>`
       return content;
   }
 
