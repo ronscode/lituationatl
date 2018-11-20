@@ -52,7 +52,10 @@ function placeMarkerAndPanTo(latLng, map) {
       <p>Comment:</p>
       </div>
       <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; leave a note:</span>
-      </div>`
+<div>
+<a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
+<a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
+</div>`
       return content;
   }
 
