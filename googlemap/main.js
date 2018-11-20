@@ -1,3 +1,6 @@
+const database = firebase.database();
+
+
 var map;
 var marker;
 var service;
