@@ -10,8 +10,8 @@ var place ;
 var lat = 33.7490;
 var lng = -84.3880;
 var userPin;
-
-var type = "night_club"
+var e = document.getElementById("mySelect");
+var type = e.options[e.selectedIndex].value;
 
 var markers =[];
 var places = [];
@@ -52,7 +52,7 @@ function init() {
     center: mapCenter,
     zoom: 15,
     // mapTypeId: 'roadmap'
-    //styling 
+    //--styling 
     styles: [
       {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -221,7 +221,7 @@ function init() {
 }
 
 function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {//PlacesServiceStatus
       for (var i = 0; i < results.length; i++) {
         places.push(results[i]);
       }
@@ -241,6 +241,9 @@ function createMarker(place){
 
         
     });
+
+    
+    console.log(placeLocation);
 
     //This is the string that includes the name and the uber icon link.
     var contentString = `
@@ -279,6 +282,21 @@ function hideMarkers() {
     markers =[];
     
 }
+
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+
+
 
 google.maps.event.addDomListener(window, 'load', init);
 
