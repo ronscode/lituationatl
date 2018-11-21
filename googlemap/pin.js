@@ -1,9 +1,11 @@
 
 function placeMarkerAndPanTo(latLng, map) {
+    var iconBase = '/images/';
     userPin = new google.maps.Marker({
       position: latLng,
       title: "You are here",
       map: map,
+      icon: iconBase + 'icon_lit.png',
       draggable: true,
       animation: google.maps.Animation.DROP
       

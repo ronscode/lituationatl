@@ -1,4 +1,4 @@
-const database = firebase.database();
+// const database = firebase.database();
 
 
 var map;
