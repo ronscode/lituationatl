@@ -27,7 +27,7 @@
      <script src="login.js"></script>
   </head>
 
-  <body>
+  <body class="bg-dark">
     
    <!-- Nav bar  -->
    <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
@@ -53,36 +53,75 @@
       </div>
     </nav>
 
-    <!-- Main -->
+      <!-- Main  -->
+    
+      <div class = "d-flex flex-column bg-dark pt-5" id ="main">
 
-    <main class="d-flex flex-column align-items-center" id="main">
-      <div class="my-4 text-center">
-        <h1 class="h1_home" style="font-family: 'Bungee Inline'">
-          IT's A LIT-UATION!
-        </h1>
-
-        <h1 class="h1_home2">
-          HOW <strong class="strongYellow">LIT</strong> is your Location?
-        </h1>
+          <div class="my-2">
+  
+              
+          
+          <!-- This is the container for the body text  -->
+  
+              <div class="container">
+              <div>
+                  <div id="home">
+                      <div class="row  my-5 rounded ">
+                          <div class="col text-light">
+                                  <h1 class="h1_home text-center ">Login & get <strong class="strongOrange">Lit</strong>-uated</h1>
+  
+                           <p class="p-3">Only registered and logged in users can view or start Lituations. Join the thousands of other people finding the best things to get into.</p>
+                           <br/>
+                           
+                           <div
+                           class="g-signin2"
+                           data-onsuccess="onSignIn"
+                           data-theme="dark"
+                           data-width="300"
+                           data-height="30"
+                           data-longtitle="true"
+                         ></div>          
+                  
+                          </div>
+                      </div>
+  
+                  </div>
+              </div>
+          </div>
       </div>
 
-      <div class="mt-3 mb-5 ">
-        <img src="../images/flames.png" style="height:200%" />
-      </div>
-      <div
-        class="g-signin2"
-        data-onsuccess="onSignIn"
-        data-theme="dark"
-        data-width="300"
-        data-height="30"
-        data-longtitle="true"
-      ></div>
+        <!-- FOOTER CODE BEGINS -->
 
-      <div class="mt-5" style="color: wheat">
-        <p>
-          <i class="fa fa-copyright"></i> Jordan Mateen, Nick Benoit, Ron Cagle,
-          Jeff Hargis
-        </p>
+        <div id="footer" class="container">
+            <hr class="lighter" />
+            <div class="row my-5">
+              <div class="col">
+                <h2 class="footer-brand-lit">Lituation</h2>
+                <a href="https://www.apple.com/ios/app-store/" target="blank"><img class="float-left mr-3" style="height:40px;" src="/images/app-store-apple.svg" /></a> <a href="https://play.google.com/store/apps?hl=en" target="blank"><img  class="float-left" style="height:40px;" src="/images/app-store-google.svg"></a>
+                <br>
+                <br>
+                <div class = "my-2 text-white" style = "width:18em;">
+                        <i class="fa fa-github "></i>
+                        <i class="fa fa-instagram ml-2"></i>
+                        <i class="fa fa-linkedin ml-2"></i>
+                        <i class="fa fa-tumblr ml-2"></i>
+                        <i class="fa fa-twitter ml-2"></i>  
+                        <i class="fa fa-facebook"></i>
+                      </div>  
+            </div>
+              <div class="col">
+              <h2 class="footer-brand-lit">About Us</h2>
+              <ul>
+                  <li><a href="#">Jordan Mateen</a></li>
+                  <li><a href="#">Ron Cagle</a></li>
+                  <li><a href="#">Nick Benoit</a></li>
+                  <li><a href="#">Jeff Hargis</a></li>
+              </ul>
+              </div>
+            
+            </div>
+        </main>
+          </div>
       </div>
     </main>
   </body>
