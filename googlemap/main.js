@@ -1,6 +1,8 @@
 // const database = firebase.database();
 
 
+
+
 var map;
 var marker;
 var service;
@@ -239,7 +241,9 @@ function init() {
 }
 
 function callback(results, status) {
+  console.log(results);
     if (status == google.maps.places.PlacesServiceStatus.OK) {//PlacesServiceStatus
+      places =[];
       for (var i = 0; i < results.length; i++) {
         places.push(results[i]);
       }
@@ -250,6 +254,8 @@ function callback(results, status) {
 //  creating markers for render based of types  ex--> type: ['bar']
 function createMarker(place){
 
+
+  // console.log(place);
     //location for marker
     var placeLocation = place.geometry.location; 
     marker = new google.maps.Marker({
@@ -261,12 +267,15 @@ function createMarker(place){
     });
 
     
-    console.log(placeLocation);
+   
 
     //This is the string that includes the name and the uber icon link.
     var contentString = `
-        <div class="d-flex">
-            <p>${place.name}</p>
+        <div class="">
+            <strong>${place.name}</strong></br>
+            ${place.vicinity}: stars</br>
+            <strong>${place.opening_hours.open_now ? 'OPEN':'CLOSED!!!'}</strong></br>
+            Price Level: ${place.price_level }
         </div>
         <div>
         <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
@@ -274,13 +283,13 @@ function createMarker(place){
         </div>
     `
 
+    
     //When you click on the marker, the uber icon appears in the info window. 
     //Name of location will hover over pin when clicked
     google.maps.event.addListener(marker, 'click', function(){
         infowindow.setContent(contentString);
         infowindow.open(map, this);
     });
-
 
 
     return marker;
@@ -315,6 +324,9 @@ function closeNav() {
   document.body.style.backgroundColor = "white";
 }
 
+function autocomplete(){
+
+}
 
 
 google.maps.event.addDomListener(window, 'load', init);
