@@ -206,7 +206,33 @@ padding: 0;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   }
+  .litSpy-btn {
 
+    background-color: rgba(255, 102, 51, 1);
+    color: lightgrey;
+    opacity: .55;
+    border:none;
+    -webkit-transition: opacity .8s; /* For Safari 3.1 to 6.0 */
+    transition: opacity .8s;
+}
+.litSpy-btn:hover {
+
+    background-color: rgba(255, 102, 51, 1);
+    color: white;
+    opacity: 1;
+    border:none;
+   
+}
+.litSpy-select {
+
+    opacity: .55;
+    -webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 1s;
+}
+.litSpy-select:hover {
+    
+    opacity: 1;
+}
 
   #pac-input:focus {
     border-color: #4d90fe;
