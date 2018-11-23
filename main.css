@@ -7,7 +7,7 @@
 
 #main{
     /* height: 100vh; */
-    background: rgba(206, 3, 3, 0.84);
+    /* background: rgba(206, 3, 3, 0.84); */
     /* overflow: hidden; */
     
     
@@ -197,7 +197,7 @@ padding: 0;
 
 
   .controls {
-    margin-top: 16px;
+    margin-top: 75px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
     box-sizing: border-box;
