@@ -28,6 +28,20 @@ nav{
     text-shadow:1px 1px black;
     font-family: 'Bungee Inline', cursive;
 }
+.navbar-brand-lit:hover {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: rgb(255, 54, 51);
+    text-shadow:1px 1px black;
+    font-family: 'Bungee Inline', cursive;
+    -webkit-transition: color 2s; /* For Safari 3.1 to 6.0 */
+    transition: color 2s;
+}
 
 .footer-brand-lit {
     font-size: 1.6rem;
@@ -38,10 +52,21 @@ nav{
 
 .home-btn {
     font-family: 'Bungee Inline', cursive; 
-    color: wheat; 
+    color: black; 
     font-size: 30px;
-    background:orangered;
+    background-color: #FF6633;
     border: 1px solid red;
+    -webkit-transition: color, background-color .8s; /* For Safari 3.1 to 6.0 */
+    transition: color .7s, background-color .7s, transition .7s;
+}
+.home-btn:hover  {
+    font-family: 'Bungee Inline', cursive; 
+    color: #074872; 
+    font-size: 30px;
+    border: 1px solid #9D0035;
+    background-color: #E74007;
+    text-decoration: none;
+    text-decoration-color:  #E74007;
 }
 
 .litNavFont {
