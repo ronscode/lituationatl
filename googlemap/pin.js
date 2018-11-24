@@ -1,9 +1,14 @@
-
+/*This function places marker on the map and pans to new center
+    after panning to new center it will make another service request for nearby places
+    and re render for new locations with in a certain radius
+ */
 function placeMarkerAndPanTo(latLng, map) {
+    var iconBase = '/images/';
     userPin = new google.maps.Marker({
       position: latLng,
       title: "You are here",
       map: map,
+      icon: iconBase + 'icon_lit.png',
       draggable: true,
       animation: google.maps.Animation.DROP
       
