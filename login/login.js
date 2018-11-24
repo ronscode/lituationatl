@@ -8,9 +8,17 @@ function onSignIn(googleUser) {
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
 
-    // The ID token we need to pass to our backend:
+    // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
+    postAJAX('/server/sign-in', {
+            id_token: id_token
+        })
+        .then(function (user) {
+            ux_mode = 'redirect',
+                redirect_uri = 'http://localhost:3000/googlemap/' + user.username
+        })
+
+
 };
 
 function onSuccess(googleUser) {
@@ -20,15 +28,66 @@ function onSuccess(googleUser) {
 function onFailure(error) {
     console.log(error);
 }
+//firebase login initiation tester code
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        // ...
+    } else {
+        // User is signed out.
+        // ...
+    }
+});
 
-function renderButton() {
-    gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 260,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+});
+
+firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+});
+
+//facebook shite/WILL ADD AFTER SITE GOES LIVE
+FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+});
+
+function checkLoginState() {
+    FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
     });
 }
+
+window.fbAsyncInit = function () {
+    FB.init({
+        appId: '{263581801174793}',
+        cookie: true,
+        xfbml: true,
+        version: '{1.0}'
+    });
+
+    FB.AppEvents.logPageView();
+
+};
+
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v3.2&appId=263581801174793';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
