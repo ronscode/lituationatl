@@ -279,8 +279,8 @@ function createMarker(place){
             Price Level: ${place.price_level }
         </div>
         <div>
-        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
-        <a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
+        <a href="https://m.uber.com/looking" target="_blank" alt="Summon Uber!!"title="Summon Uber!"><img src="../images/uber-icon.png" alt="Summon Uber" width="20px" height="20px"/></a>
+        <a href="https://ride.lyft.com" target="_blank" title="Need a Lyft?"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
         </div>
     `
 
