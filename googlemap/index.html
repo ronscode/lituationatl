@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
 
+
 </head>
 <body class ="map_page_body bg-dark">
          <!-- Nav bar  -->
@@ -24,7 +25,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -36,8 +36,6 @@
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="/login/">Login / Register</a>
                   </li>
-               
-                
               </ul>
             </div>
           </nav>
@@ -47,40 +45,37 @@
 
         <!---MAIN CODE-->
         <div id="mySidenav" class="sidenav mt-5 text-white">
-            <div>
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <h1>Comments:</h1>
-
+          <div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>Comments:</h1>
+            <div class = "d-flex">
+              <button class = "btn btn-success" id="like">Like</button>
+              <div class = "h3 ml-5"id="counter">0</div>
             </div>
+          </div>
                 
         </div>
 
         
         <div class = "d-flex align-item-center"id="floating-panel">
-            <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
-            <input onclick="hideMarkers();" type=button value="Hide" class="litSpy-btn" >
-            <!-- <input id ="deleteMarkers" onclick="hideUserMakers();" type=button value="Test"> -->
+
+            <input onclick="hideMarkers();" type=button value="Hide" class="litSpy-btn">
             <input onclick="showMarkers();" type=button value="LIT SPY" class="litSpy-btn"> 
-            <select id = "mySelect" class="litSpy-select">
-                    <option value="bar">Bars</option>
-                    <option value="bowling_alley">bowling_alley</option>
-                    <option value="cafe">Cafe</option>
-                    <option value="liquor_store">Liquor Store</option>
-                    <option value="meal_delivery">Meal Delivery</option>
-                    <option value="movie_rental">Movie Rental</option>
-                    <option value="night_club">Night Clubstion>
-                    <option value="parking">Parking</option>
-                    <option value="restaurant">Restaurant</option>
-                    <option value="shopping_mall">Malls</option>
-
-
-                    
-
+            <select id = "mySelect" class="litSpy-select" onchange="getSelectValue();">
+              <option value="bar">Bars</option>
+              <option value="bowling_alley">bowling_alley</option>
+              <!-- <option value="cafe">Cafe</option>
+              <option value="liquor_store">Liquor Store</option>
+              <option value="meal_delivery">Meal Delivery</option>
+              <option value="movie_rental">Movie Rental</option>-->
+              <option value="night_club">Night Clubs</option>
+              <!-- <option value="parking">Parking</option>
+              <option value="restaurant">Restaurant</option> -->
+              <option value="shopping_mall">Malls</option> 
             </select>
-            
-
         </div>
-        
+        <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
+
         <div id="map">
         <div id="demo"></div>
 
@@ -105,8 +100,9 @@
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places&callback=autocomplete"></script>
         <script src="main.js"></script>
         <script src="pin.js"></script>
-        <script src ="renderselect.js"></script>
+        <script src ="select.js"></script>
         <script src="comments.js"></script>
+        <script src="likes.js"></script>
         <!-- FOOTER CODE BEGINS -->
 
         <div id="footer" class="container">
