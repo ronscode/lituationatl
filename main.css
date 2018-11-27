@@ -317,6 +317,13 @@ padding: 0;
     transition: margin-left .5s;
     padding: 16px;
 }
+.likeButtonLit {
+    background-color: #FF6633;
+}
+.likeButtonFire {
+    background-color: firebrick;
+    color: white;
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
