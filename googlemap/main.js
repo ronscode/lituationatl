@@ -262,7 +262,7 @@ function callback(results, status) {
 //  creating markers for render based of t ypes  ex--> type: ['bar']
 function createMarker(place){
 
-  
+
   // console.log(place);
     //location for marker
     iconBase = '/images/';
@@ -281,6 +281,7 @@ function createMarker(place){
     var contentString = `
         <div class="">
             <strong>${place.name}</strong></br>
+
             <strong>Rating: ${place.rating} stars</strong></br>
             ${place.vicinity}:</br>
             <strong>${place.opening_hours.open_now ? 'OPEN':'CLOSED!!!'}</strong></br>
@@ -332,6 +333,7 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
   document.body.style.backgroundColor = "white";
 }
+
 
 google.maps.event.addDomListener(window, 'load', init);
 

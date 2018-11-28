@@ -3,6 +3,7 @@
     and re render for new locations with in a certain radius
  */
 function placeMarkerAndPanTo(latLng, map) {
+
     iconBase = '/images/';
     userPin = new google.maps.Marker({
       position: latLng,
