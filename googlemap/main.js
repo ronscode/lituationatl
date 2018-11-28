@@ -322,7 +322,7 @@ function hideMarkers() {
 
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "350px";
+  document.getElementById("mySidenav").style.width = "20%";
   document.getElementById("main").style.marginLeft = "250px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }

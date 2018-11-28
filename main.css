@@ -224,7 +224,7 @@ padding: 0;
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-    margin-left: 75%;
+    margin-left: 70%;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     margin-top: 75px;
@@ -321,13 +321,13 @@ padding: 0;
     color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+/* .sidenav  {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
+} */
 
 #main {
     transition: margin-left .5s;
