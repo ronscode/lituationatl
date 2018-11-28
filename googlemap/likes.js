@@ -9,10 +9,12 @@ likeButton.addEventListener('click', function(){
 
     if(count == 3){
         likeButton.innerHTML = 'LIT!!';
+        likeButton.className = 'btn likeButtonLit';
 
-    }else if(count == 25){
+    }else if(count == 10){
 
         likeButton.innerHTML = 'SUPER LIT!!';
+        likeButton.className = 'btn likeButtonFire';
     }
     
 });

@@ -47,7 +47,7 @@
         <div id="mySidenav" class="sidenav mt-5 text-white">
           <div>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <h1>Comments:</h1>
+            <h2>COMMENTS:</h2>
             <div class = "d-flex">
               <button class = "btn btn-success" id="like">Like</button>
               <div class = "h3 ml-5"id="counter">0</div>
@@ -57,8 +57,8 @@
         </div>
 
         
-        <div class = "d-flex align-item-center"id="floating-panel">
-
+        <div class = "d-flex flex-column floatingPanel" id="floating-panel" >
+            <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
             <input onclick="hideMarkers();" type=button value="Hide" class="litSpy-btn">
             <input onclick="showMarkers();" type=button value="LIT SPY" class="litSpy-btn"> 
             <select id = "mySelect" class="litSpy-select" onchange="getSelectValue();">
@@ -68,7 +68,7 @@
               <option value="shopping_mall">Malls</option> 
             </select>
         </div>
-        <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
+       
 
         <div id="map">
         <div id="demo"></div>
