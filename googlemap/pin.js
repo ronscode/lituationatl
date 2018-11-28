@@ -3,7 +3,8 @@
     and re render for new locations with in a certain radius
  */
 function placeMarkerAndPanTo(latLng, map) {
-    var iconBase = '/images/';
+
+    iconBase = '/images/';
     userPin = new google.maps.Marker({
       position: latLng,
       title: "You are here",
@@ -25,10 +26,10 @@ function placeMarkerAndPanTo(latLng, map) {
 
     mapCenter = new google.maps.LatLng(lat,lng);
     
-    var request = {
+    request = {
         location: mapCenter,
         radius: '4828.03',
-        type: [type]
+        type: [placeType]
     }
 
     
@@ -54,13 +55,10 @@ function placeMarkerAndPanTo(latLng, map) {
   function pinContent(){
       
       var content =`<div class="d-flex">
-      <p>Comment:</p>
-      </div>
-      <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; leave a note:</span>
-<div>
-<a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
-<a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
-</div>`
+        <a style="font-size:20px;cursor:pointer" onclick="openNav()"> <img src=/images/note.png title="COMMENTS"> </a>
+        <a href="https://m.uber.com/looking" target="_blank" title="Summon Uber!"  class="ml-1" ><img src="../images/uber-icon.png" alt="Summon Uber!" /></a>
+        <a href="https://ride.lyft.com" target="_blank" title="Need a Lyft?" class="ml-1"><img src="../images/lyft-icon.png"/></a>
+        </div>`
       return content;
   }
 

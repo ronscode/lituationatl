@@ -9,17 +9,18 @@ var service;
 var infowindow;
 var userPinInfo;
 var place ;
+var iconBase;
 var lat = 33.7490;
 var lng = -84.3880;
 var userPin;
-var e = document.getElementById("mySelect");
-var type = e.options[e.selectedIndex].value;
-
+var e ;//= document.getElementById("mySelect");
+var placeType = ' ';// = e.options[e.selectedIndex].value;
+var clicks =0;
 var markers =[];
 var places = [];
 var pinDrop = [];
 var userDrop =[];
-
+var request = {};
 
 var youAreHere ={
     lat,
@@ -29,12 +30,12 @@ var youAreHere ={
 /**
       * Data object to be written to Firebase.
       */
-var data = {
-    sender: null,
-    timestamp: null,
-    lat: null,
-    lng: null
-  };
+// var data = {
+//     sender: null,
+//     timestamp: null,
+//     lat: null,
+//     lng: null
+//   };
 
 
 var x = document.getElementById("demo");
@@ -65,14 +66,21 @@ function init() {
     zoom: 15,
     // mapTypeId: 'roadmap'
     //--styling 
-    styles: [
+     styles: [
       {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+      
       {
         featureType: 'administrative.locality',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
+        stylers: [{visibility: "off"}]
+        
+      },
+      {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }]
       },
       {
         featureType: 'poi',
@@ -122,12 +130,12 @@ function init() {
       {
         featureType: 'transit',
         elementType: 'geometry',
-        stylers: [{color: '#2f3948'}]
+        stylers: [{visibility: "off"}]
       },
       {
         featureType: 'transit.station',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
+        stylers: [{visibility: "off"}]
       },
       {
         featureType: 'water',
@@ -162,10 +170,10 @@ function init() {
   });
 
 
-  var request = {
+  request = {
     location: mapCenter,
     radius: '4828.03',
-    type: [type]
+    type: [placeType]
 
     // query: 'Clark Atlanta University',
     //fields: ['photos', 'formatted_address', 'name', 'rating', 'opening_hours', 'geometry']
@@ -176,7 +184,7 @@ function init() {
   service.nearbySearch(request, callback);
 
 
-  // Search box;
+  // Search box------------------------------------------------------------------------------
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
@@ -237,7 +245,7 @@ function init() {
         });
         map.fitBounds(bounds);
       });
-
+// Search box end -------------------------------------------------------------------------
 }
 
 function callback(results, status) {
@@ -251,19 +259,19 @@ function callback(results, status) {
 }
 
 
-//  creating markers for render based of types  ex--> type: ['bar']
+//  creating markers for render based of t ypes  ex--> type: ['bar']
 function createMarker(place){
 
 
   // console.log(place);
     //location for marker
+    iconBase = '/images/';
     var placeLocation = place.geometry.location; 
     marker = new google.maps.Marker({
         map: map,
         position: placeLocation,
-        
-
-        
+        animation: google.maps.Animation.DROP
+    
     });
 
     
@@ -273,13 +281,15 @@ function createMarker(place){
     var contentString = `
         <div class="">
             <strong>${place.name}</strong></br>
-            ${place.vicinity}: stars</br>
+
+            <strong>Rating: ${place.rating} stars</strong></br>
+            ${place.vicinity}:</br>
             <strong>${place.opening_hours.open_now ? 'OPEN':'CLOSED!!!'}</strong></br>
             Price Level: ${place.price_level }
         </div>
         <div>
-        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
-        <a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
+        <a href="https://m.uber.com/looking" target="_blank" alt="Summon Uber!!"title="Summon Uber!"><img src="../images/uber-icon.png" alt="Summon Uber" width="20px" height="20px"/></a>
+        <a href="https://ride.lyft.com" target="_blank" title="Need a Lyft?"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
         </div>
     `
 
@@ -313,7 +323,7 @@ function hideMarkers() {
 
 
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "350px";
   document.getElementById("main").style.marginLeft = "250px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
@@ -322,10 +332,6 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
   document.body.style.backgroundColor = "white";
-}
-
-function autocomplete(){
-
 }
 
 
