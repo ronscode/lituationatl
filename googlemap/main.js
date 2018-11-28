@@ -1,4 +1,4 @@
-// const database = firebase.database();
+const database = firebase.database();
 
 
 
@@ -21,21 +21,25 @@ var places = [];
 var pinDrop = [];
 var userDrop =[];
 var request = {};
+var currentTimeStamp;
 
 var youAreHere ={
     lat,
     lng
 };
-
 /**
       * Data object to be written to Firebase.
       */
-// var data = {
-//     sender: null,
-//     timestamp: null,
-//     lat: null,
-//     lng: null
-//   };
+var data = {
+  sender: null,
+  timestamp: null,
+  lat: null,
+ lng: null
+ };
+
+ var commentBtn = document.querySelector(".commentBtn");
+
+var litLocation = database.ref(`lit-location/`);
 
 
 var x = document.getElementById("demo");
@@ -154,7 +158,6 @@ function init() {
       }
     ]
 
-    //----------
   });
 
   // adds pin to map and marker becomes new center
@@ -162,13 +165,92 @@ function init() {
     placeMarkerAndPanTo(e.latLng, map);
   });
 
+
   // Listen for clicks and add the location of the click to firebase.
     map.addListener('click', function(e) {
     data.lat = e.latLng.lat();
     data.lng = e.latLng.lng();
-    console.log(data);
-  });
 
+    var timestamp2 = Math.floor(Date.now() / 1000);
+
+
+  var pinDropLoc = database.ref(`lit-location/${timestamp2}`).update(data);
+
+  currentTimeStamp = timestamp2;
+
+
+
+  });
+  console.log(data);
+
+  commentBtn.addEventListener('click', writeComment);
+
+
+  function writeComment() {
+    var firstName = document.getElementById("fname").value;
+        var lastName = document.getElementById("lname").value;
+        var name = `${firstName} ${lastName}`;
+        var commentInput = document.getElementById("commentBox").value;
+
+        if(firstName == "" || lastName == "" || commentInput == ""){
+          alert("Please fill in all fields to leave a comment.");
+          return
+        }
+
+        database.ref(`lit-location/${currentTimeStamp}/comments`).push({
+    
+          fullName: name,
+          comment: commentInput
+    
+        });
+
+        document.getElementById("fname").value = "";
+        document.getElementById("lname").value = "";
+        document.getElementById("commentBox").value = "";
+      
+  }
+
+  // function showComments() {
+  //   var thread = document.getElementById("thread");
+  //   var threadContent = "";
+
+  //   var commentThread = database.ref(`lit-location/${currentTimeStamp}/comments`);
+
+  //   commentThread.on('value',function(snapshot){
+  
+  //     /*
+  //       Here we remove all existing comments from the page so every 
+  //       time the function runs lines 37 to 40 don't duplicate the thread 
+  //       on every db update.
+  //     */
+  
+  //     while(thread.firstChild){
+  //       thread.removeChild(thread.firstChild);
+  //     }
+  
+  //     // We begin iterating through all the db entries here
+  //     snapshot.forEach(function(entry){
+  
+  //       /*
+  //       On every iteration we get the name of the person who left the comment
+  //       as well as their comment and store them in some very human readable 
+  //       variables with a naming convention that makes sense.
+  //       We then assign our thread content variable to the html below
+  //       and inject our new db variables as needed. We are adding a new
+  //       set of html to our thread element on each iteration of our db snapshot
+  //       object.
+  //       */
+  //       var nameFromDb = entry.val().fullName;
+  //       var commentFromDb = entry.val().comment;
+  //       threadContent = `<div class="comment"><h3>${nameFromDb} says: </h3>
+  //       <p>${commentFromDb}</p></div><br>`
+  
+  //       thread.innerHTML += threadContent;
+  //     });
+  //   });
+
+  // }
+ 
 
   request = {
     location: mapCenter,
@@ -324,13 +406,13 @@ function hideMarkers() {
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "350px";
-  document.getElementById("main").style.marginLeft = "250px";
+  // document.getElementById("main").style.marginLeft = "250px";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  // document.getElementById("main").style.marginLeft= "0";
   document.body.style.backgroundColor = "white";
 }
 
