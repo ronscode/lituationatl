@@ -2,15 +2,18 @@ function getSelectValue(){
 
     e = document.getElementById("mySelect");
     placeType = e.options[e.selectedIndex].value;
-    if (placeType == 'bar'){
+    if (placeType == '#'){
+      alert("Pick a scene");
+      hideMarkers();
+
+    }else if(placeType == 'bar'){
   
       request = {
         location: mapCenter,
         radius: '4828.03',
         type: ['bar']
-    }
-  
-    }else if(placeType == 'night_club'){
+      }
+    } else if(placeType == 'night_club'){
       request = {
         location: mapCenter,
         radius: '4828.03',

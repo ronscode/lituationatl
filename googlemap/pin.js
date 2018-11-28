@@ -6,6 +6,7 @@
     and re render for new locations with in a certain radius
  */
 function placeMarkerAndPanTo(latLng, map) {
+
     iconBase = '/images/';
     userPin = new google.maps.Marker({
       position: latLng,
@@ -57,11 +58,11 @@ function placeMarkerAndPanTo(latLng, map) {
   function pinContent(){
       
       var content =`<div class="d-flex">
-      </div>
-      <span style="font-size:20px;cursor:pointer" onclick="openNav();showComments()">&#9776; Like / Leave a note :</span>
-        <div>
-        <a href="https://m.uber.com/looking" target="_blank"><img src="../images/uber-icon.png" width="20px" height="20px"/></a>
-        <a href="https://ride.lyft.com" target="_blank"><img src="../images/lyft-icon.png" width="30px" height="20px"/></a>
+
+        <a style="font-size:20px;cursor:pointer" onclick="openNav()"> <img src=/images/note.png title="COMMENTS"> </a>
+        <a href="https://m.uber.com/looking" target="_blank" title="Summon Uber!"  class="ml-1" ><img src="../images/uber-icon.png" alt="Summon Uber!" /></a>
+        <a href="https://ride.lyft.com" target="_blank" title="Need a Lyft?" class="ml-1"><img src="../images/lyft-icon.png"/></a>
+
         </div>`
       return content;
   }

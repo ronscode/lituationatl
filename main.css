@@ -5,12 +5,12 @@
 
 }
 
-#main{
+#main {
     /* height: 100vh; */
     /* background: rgba(206, 3, 3, 0.84); */
     /* overflow: hidden; */
 }
-nav{
+nav {
     overflow: hidden;
 }
 
@@ -39,6 +39,7 @@ nav{
     font-family: 'Bungee Inline', cursive;
     -webkit-transition: color 2s; /* For Safari 3.1 to 6.0 */
     transition: color 2s;
+    text-decoration: none;
 }
 
 .footer-brand-lit {
@@ -197,29 +198,35 @@ padding: 0;
 /* floting panel for ggogle map */
 
 #floating-panel {
+    
+    /* margin-top: 70px; */
+  }
+/* ---------- */
+
+#pac-input {
+
+    /* width: 400px; */
+  }
+  
+.floatingPanel {
     position: absolute;
-    top: 10px;
-    left: 50%;
+    top: 15%;
+    left: 88%;
     z-index: 5;
     text-align: center;
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
-    margin-top: 70px;
-  }
-/* ---------- */
-  #pac-input {
+}
+
+  .controls {
+    /* position: absolute; */
     background-color: #fff;
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-    margin-left: 12px;
+    margin-left: 75%;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 400px;
-  }
-
-
-  .controls {
     margin-top: 75px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
@@ -228,7 +235,15 @@ padding: 0;
     height: 32px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    opacity: .65;
+    -webkit-transition: opacity .8s; /* For Safari 3.1 to 6.0 */
+    transition: opacity .8s;
   }
+
+  .controls:hover {
+    opacity: 1;  
+  }
+
   .litSpy-btn {
 
     background-color: rgba(255, 102, 51, 1);
@@ -281,7 +296,7 @@ padding: 0;
  /* side panel for notes div on map */
   .sidenav {
     height: 100%;
-    width: 0;
+    width: 20%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -290,6 +305,7 @@ padding: 0;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    opacity: .75;
 }
 
 .sidenav a {
@@ -316,6 +332,13 @@ padding: 0;
 #main {
     transition: margin-left .5s;
     padding: 16px;
+}
+.likeButtonLit {
+    background-color: #FF6633;
+}
+.likeButtonFire {
+    background-color: firebrick;
+    color: white;
 }
 
 @media screen and (max-height: 450px) {
