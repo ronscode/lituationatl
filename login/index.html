@@ -2,17 +2,16 @@
 <html>
 
 <head>
-  <meta name="google-signin-scope" content="profile email" />
-  <meta name="google-signin-client_id" content="999830249902-44a1oki06gl1nh7f4g6i7d9k4gqvap2g.apps.googleusercontent.com" />
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <title>Login and Get LIT-uated</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Kumar+One+Outline|Megrim|Ranga" rel="stylesheet" />
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="/main.css" />
-  <script src="login.js"></script>
+
 </head>
 
 <body class="bg-dark">
@@ -61,8 +60,8 @@
                   other people finding the best things to get into.</p>
                 <br />
 
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="300" data-height="30"
-                  data-longtitle="true"></div>
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader"></div>
 
               </div>
             </div>
@@ -107,7 +106,12 @@
       </main>
     </div>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
+
+  <script src="login.js"></script>
   </main>
+
 </body>
 
 </html>
