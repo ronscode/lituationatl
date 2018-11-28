@@ -70,10 +70,17 @@ function init() {
       {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+      
       {
         featureType: 'administrative.locality',
         elementType: 'labels.text.fill',
         stylers: [{visibility: "off"}]
+        
+      },
+      {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }]
       },
       {
         featureType: 'poi',
@@ -258,6 +265,7 @@ function createMarker(place){
   
   // console.log(place);
     //location for marker
+    iconBase = '/images/';
     var placeLocation = place.geometry.location; 
     marker = new google.maps.Marker({
         map: map,
