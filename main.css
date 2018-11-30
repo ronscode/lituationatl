@@ -1,5 +1,7 @@
 /*** CSS FILE FOR LITUATION  ***/
-
+body {
+    background-color: #343a40;
+}
 .home_body{
     background-image: url("/images/atlanta-map.png");
 
@@ -9,6 +11,7 @@
     /* height: 100vh; */
     /* background: rgba(206, 3, 3, 0.84); */
     /* overflow: hidden; */
+    
 }
 nav {
     overflow: hidden;
