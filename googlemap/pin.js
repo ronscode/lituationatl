@@ -59,7 +59,7 @@ function placeMarkerAndPanTo(latLng, map) {
       
       var content =`<div class="d-flex">
 
-        <a style="font-size:20px;cursor:pointer" onclick="openNav()"> <img src=/images/note.png title="COMMENTS"> </a>
+        <a style="font-size:20px;cursor:pointer" onclick="openNav();showComments()"> <img src=/images/note.png title="COMMENTS"> </a>
         <a href="https://m.uber.com/looking" target="_blank" title="Summon Uber!"  class="ml-1" ><img src="../images/uber-icon.png" alt="Summon Uber!" /></a>
         <a href="https://ride.lyft.com" target="_blank" title="Need a Lyft?" class="ml-1"><img src="../images/lyft-icon.png"/></a>
 
