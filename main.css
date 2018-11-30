@@ -54,7 +54,7 @@ nav {
 
 .home-btn {
     font-family: 'Bungee Inline', cursive; 
-    color: black; 
+    color: #902500; 
     font-size: 30px;
     background-color: #FF6633;
     border: 1px solid red;
@@ -63,7 +63,7 @@ nav {
 }
 .home-btn:hover  {
     font-family: 'Bungee Inline', cursive; 
-    color: #074872; 
+    color: #FFB961; 
     font-size: 30px;
     border: 1px solid #9D0035;
     background-color: #E74007;
@@ -153,35 +153,9 @@ hr.lighter {
 
 /* google map css below */
 
-/* This is the animation for the about page CSS */
-
-@keyframes aboutSlideIn {
-    from {
-      margin-left: 100%;
-      width: 200%; 
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
-
-
-.aboutSlide {
-  animation-duration: .7s;
-  animation-name: aboutSlideIn;
-  animation-iteration-count: 1;
-}
-.navStyle {
-    font-size: 25px; 
-    font-family: 'Bungee Inline';
-}
-
-/* google map css below */
-
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
+
 #map {
 height: 100%;
 }
