@@ -346,39 +346,19 @@ function createMarker(place){
     return marker;
 }
 
+//shows markers when "lit spy" is clicked
 function showMarkers() {
     hideMarkers();
     for (var i = 0; i < places.length; i++) {
-        markers.push(createMarker(places[i]));
-      }
-
-
+      markers.push(createMarker(places[i]));
+    }
 }
 function hideMarkers() {
     for(var marker in markers){
-        markers[marker].setMap(null)
+      markers[marker].setMap(null)
     }
-    markers =[];
-    
+  markers =[];
 }
-
-
-function openNav() {
-
-
-
-  document.getElementById("mySidenav").style.width = "350px";
-  // document.getElementById("main").style.marginLeft = "250px";
-
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  // document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "white";
-}
-
 
 google.maps.event.addDomListener(window, 'load', init);
 
