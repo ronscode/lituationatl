@@ -25,6 +25,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -36,12 +37,12 @@
                 <li class="nav-item">
                     <a class="nav-link mr-3" href="/login/">Login / Register</a>
                   </li>
+
               </ul>
             </div>
           </nav>
 
         <!------Optional -->
-
 
         <!---MAIN CODE-->
         <div id="mySidenav" class="sidenav mt-5 text-white">
@@ -53,10 +54,32 @@
               <div class = "h3 ml-5"id="counter">0</div>
             </div>
           </div>
-                
+          <div class="comment-section text-center">
+
+            <div class="spacer"></div>   
+
+            <label for="fname"><strong>First Name</strong></label>
+            <input type="text" id="fname" required="true"><br>
+
+            <label for="lname"><strong>Last Name</strong></label>
+            <input type="text" id="lname" required="true"><br>
+
+            <label for="commentBox"><strong>Comment</strong></label>
+            <input id="commentBox" type="text" required="true">
+
+            <br>
+
+            <button class="btn btn-primary commentBtn">Submit</button>
+
         </div>
 
-        
+
+        <div class="spacer"></div>
+
+                    <div id="thread" class="text-center">
+
+                    </div>
+    </div>
         
         <div class = "d-flex flex-column floatingPanel" id="floating-panel" >
             <input id="pac-input" class="controls" type="text" placeholder="Find your location...">
@@ -69,7 +92,7 @@
               <option value="shopping_mall">Malls</option> 
             </select>
         </div>
-       
+
 
         <div id="map">
         <div id="demo"></div>
@@ -93,11 +116,13 @@
           firebase.initializeApp(config);
         </script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPbdZYx6iCVegJQ9ldTvWFVG749vyjAeM&libraries=places&callback=autocomplete"></script>
-        <script src="main.js"></script>
-        <script src="pin.js"></script>
-        <script src ="select.js"></script>
+
+        <script src="./main.js"></script>
+        <script src="./pin.js"> </script>
+        <script src ="./select.js"></script>
         <script src="comments.js"></script>
-        <script src="likes.js"></script>
+        <script src="./likes.js"></script>
+
         <!-- FOOTER CODE BEGINS -->
 
         <div id="footer" class="container">
